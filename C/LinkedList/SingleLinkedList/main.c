@@ -15,7 +15,9 @@ int main(int argc, const char * argv[]) {
     for (int i = 10; i != 0; i--) {
         Insert(i, L, L);
     }
-    InsertBefore(3, L, Find(1, L));
+    PrintAll( L );
+    printf("\n");
+    L = Reverse( L );
     PrintAll( L );
     //printf("Hello, World!\n");
     return 0;

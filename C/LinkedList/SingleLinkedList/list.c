@@ -17,8 +17,7 @@ struct Node
     Position    Next;
 };
 
-List
-MakeEmpty( List L )
+List MakeEmpty( List L )
 {
     if( L != NULL )
         DeleteList( L );
@@ -31,8 +30,7 @@ MakeEmpty( List L )
 
 /* Return true if L is empty */
 
-int
-IsEmpty( List L )
+int IsEmpty( List L )
 {
     return L->Next == NULL;
 }
@@ -47,8 +45,7 @@ int IsLast( Position P, List L )
 
 /* Return Position of X in L; NULL if not found */
 
-Position
-Find( ElementType X, List L )
+Position Find( ElementType X, List L )
 {
     Position P;
     
@@ -64,8 +61,7 @@ Find( ElementType X, List L )
 /* Assume that the position is legal */
 /* Assume use of a header node */
 
-void
-Delete( ElementType X, List L )
+void Delete( ElementType X, List L )
 {
     Position P, TmpCell;
     
@@ -82,8 +78,7 @@ Delete( ElementType X, List L )
 /* If X is not found, then Next field of returned value is NULL */
 /* Assumes a header */
 
-Position
-FindPrevious( ElementType X, List L )
+Position FindPrevious( ElementType X, List L )
 {
     Position P;
     
@@ -98,12 +93,11 @@ FindPrevious( ElementType X, List L )
 /* Header implementation assumed */
 /* Parameter L is unused in this implementation */
 
-void
-Insert( ElementType X, List L, Position P )
+void Insert( ElementType X, List L, Position P )
 {
     Position TmpCell;
     
-    mpCell = malloc( sizeof( struct Node ) );
+    TmpCell = malloc( sizeof( struct Node ) );
     if( TmpCell == NULL )
         FatalError( "Out of space!!!" );
     
@@ -116,8 +110,7 @@ Insert( ElementType X, List L, Position P )
 /* Header implementation assumed */
 /* Parameter L is used in this implementation */
 
-void
-InsertBefore( ElementType X, List L, Position P )
+void InsertBefore( ElementType X, List L, Position P )
 {
     Position TmpCell;
     Position Previous;
@@ -136,17 +129,16 @@ InsertBefore( ElementType X, List L, Position P )
 
 /* Incorrect DeleteList algorithm */
 
-void
-DeleteList( List L )
+void DeleteList( List L )
 {
     Position P;
     
-    /* 1*/      P = L->Next;  /* Header assumed */
-    /* 2*/      L->Next = NULL;
-    /* 3*/      while( P != NULL )
+    P = L->Next;  /* Header assumed */
+    L->Next = NULL;
+    while( P != NULL )
     {
-        /* 4*/          free( P );
-        /* 5*/          P = P->Next;
+        free( P );
+        P = P->Next;
     }
 }
 
@@ -154,8 +146,7 @@ DeleteList( List L )
 
 /* Correct DeleteList algorithm */
 
-void
-DeleteList( List L )
+void DeleteList( List L )
 {
     Position P, Tmp;
     
@@ -169,26 +160,22 @@ DeleteList( List L )
     }
 }
 
-Position
-Header( List L )
+Position Header( List L )
 {
     return L;
 }
 
-Position
-First( List L )
+Position First( List L )
 {
     return L->Next;
 }
 
-Position
-Advance( Position P )
+Position Advance( Position P )
 {
     return P->Next;
 }
 
-ElementType
-Retrieve( Position P )
+ElementType Retrieve( Position P )
 {
     return P->Element;
 }
@@ -198,8 +185,33 @@ void PrintAll( List L )
     Position P;
     
     P = L->Next;
-    while ( P != NULL ) {
+    while ( P != NULL )
+    {
         printf("%d ", P->Element );
         P = P->Next;
     }
+}
+
+List Reverse( List L)
+{
+    Position POne, PTwo, PThree;
+    
+    if ( (L->Next == NULL) || (L->Next->Next == NULL) )
+    {
+        return L;
+    }
+    
+    POne = L->Next;
+    PTwo = POne->Next;
+    while ( PTwo != NULL )
+    {
+        PThree = PTwo->Next;
+        PTwo->Next = POne;
+        POne = PTwo;
+        PTwo = PThree;
+    }
+    
+    L->Next->Next = NULL;
+    L->Next = POne;
+    return L;
 }

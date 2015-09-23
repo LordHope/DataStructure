@@ -31,5 +31,6 @@ Position Advance( Position P );
 ElementType Retrieve( Position P );
 
 void PrintAll( List L );
+List Reverse( List L);
 
 #endif /* list_h */
