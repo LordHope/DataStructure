@@ -1,12 +1,12 @@
 //
-//  list.c
+//  singlelinkedlist.c
 //  DataStructure
 //
 //  Created by Chen Ciro on 15/9/22.
 //  Copyright © 2015年 Chen Ciro. All rights reserved.
 //
 
-#include "list.h"
+#include "singlelinkedlist.h"
 #include <stdlib.h>
 #include "fatal.h"
 
@@ -180,7 +180,7 @@ ElementType Retrieve( Position P )
     return P->Element;
 }
 
-void PrintAll( List L )
+void PrintList( List L )
 {
     Position P;
     

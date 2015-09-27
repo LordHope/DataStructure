@@ -1,5 +1,5 @@
 //
-//  list.h
+//  singlelinkedlist.c.h
 //  DataStructure
 //
 //  Created by Chen Ciro on 15/9/22.
@@ -8,8 +8,8 @@
 
 typedef int ElementType;
 
-#ifndef list_h
-#define list_h
+#ifndef singlelinkedlist_h
+#define singlelinkedlist_h
 
 struct Node;
 typedef struct Node *PtrToNode;
@@ -30,7 +30,7 @@ Position First( List L );
 Position Advance( Position P );
 ElementType Retrieve( Position P );
 
-void PrintAll( List L );
+void PrintList( List L );
 List Reverse( List L);
 
-#endif /* list_h */
+#endif /* singlelinkedlist_h */

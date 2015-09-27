@@ -7,7 +7,7 @@
 //
 
 #include <stdio.h>
-#include "list.h"
+#include "singlelinkedlist.h"
 
 int main(int argc, const char * argv[]) {
     List L;
@@ -18,7 +18,7 @@ int main(int argc, const char * argv[]) {
     PrintAll( L );
     printf("\n");
     L = Reverse( L );
-    PrintAll( L );
+    PrintList( L );
     //printf("Hello, World!\n");
     return 0;
 }
