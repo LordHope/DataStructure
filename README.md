@@ -2,23 +2,12 @@
 
 > 常见数据结构和常见算法的实现。（Updating）  
   
-###### 相关资源：  
+### 相关资源：  
 + 数据结构和算法动态可视化
 	+ [VisouAlgo](http://visualgo.net/)
 	+ [algovis](https://github.com/enjalot/algovis)
+    
+### 相关实现
++ [C](https://github.com/LordHope/DataStructure/tree/master/C)
 
-## 数据结构
 
-### 链表
-
-+ [单链表](https://github.com/LordHope/DataStructure/tree/master/C/LinkedList/SingleLinkedList)
-+ [双链表](https://github.com/LordHope/DataStructure/tree/master/C/LinkedList/DoubleLinkedList)
-
-### 栈
-
-+ [链表实现](https://github.com/LordHope/DataStructure/tree/master/C/Stack/ListImplementation)
-+ [数组实现](https://github.com/LordHope/DataStructure/tree/master/C/Stack/ArrayImplementation)
-
-### 树
-
-+ [二叉搜索树](https://github.com/LordHope/DataStructure/tree/master/C/Tree/BinarySearchTree)
