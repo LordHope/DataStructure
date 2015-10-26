@@ -26,6 +26,5 @@ SearchTree Delete( ElementType X, SearchTree T );
 SearchTree Insert( ElementType X, SearchTree T );
 ElementType Retrieve( Position P );
 void PrintTree( SearchTree T, int level );
-void padding(int n );
 
 #endif /* binarysearchtree_h */
